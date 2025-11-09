@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Project data (local only)
+data/data.json
+data/*.key.pem

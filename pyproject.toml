@@ -1,18 +1,20 @@
-[tool.poetry]
-name = "getechserver"
+[project]
+name = "auth-demo"
 version = "0.0.1"
 description = "A server just for development"
-authors = ["Alsefum"]
+authors = [{ name = "Alsefum" }]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-fastapi = "^0.115.11"
-uvicorn = "^0.34.0"
-cryptography = "^44.0.2"
-psycopg2 = "^2.9.10"
-
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115.11",
+  "uvicorn>=0.34.0",
+  "cryptography>=44.0.2",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+# uv will read PEP 621 metadata directly; no extra config is strictly required.
+# For development, run:
+#   uv run uvicorn main:app --app-dir src --reload
